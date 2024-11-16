@@ -1,0 +1,72 @@
+{% extends 'admin/admin.html' %}
+{% block adminbodycontent %}
+
+<style>
+  #enlarge {
+    cursor: pointer;
+    --webkit-transition-duration: 0.3s;
+    --webkit-transition-timing-function: ease;
+  }
+
+  /*change the number below to scale to the appropriate size*/
+  #enlarge:hover {
+    transform: scale(5);
+
+  }
+</style>
+<div class="d-flex justify-content-center mt-2 container inner" style="border-radius: 15px;">
+
+
+
+  <table class="table ">
+    <thead>
+      <tr class="text-center">
+        <th scope="col">ID</th>
+        <th scope="col">IMAGE</th>
+        <th scope="col">NAME</th>
+        <th scope="col">PRICE</th>
+        <th scope="col">DESCRIPTION</th>
+        <th scope="col">QUANTITY</th>
+        <th scope="col">FLAVOUR</th>
+        <th scope="col">WEIGHT</th>
+        <th scope="col">EVENT</th>
+        <th scope="col">SHAPE</th>
+
+
+        <th scope="col" colspan="2">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for chocolate in chocolates %}
+      <tr class="text-center">
+        <th>{{chocolate.chocolate_id}}</th>
+        <td>
+          <img id="enlarge" src="http://127.0.0.1:8000/admin/chocolate/media/{{chocolate.image}}" alt="" width="40px"
+            height="40px">
+        </td>
+        <td>{{chocolate.chocolate_name}}</td>
+        <td>{{chocolate.chocolate_price}}</td>
+        <td>{{chocolate.chocolate_description}}</td>
+        <td>{{chocolate.chocolate_quantity}}</td>
+        <td>{{chocolate.chocolate_flavour}}</td>
+        <td>{{chocolate.chocolate_weight}}</td>
+        <td>{{chocolate.chocolate_event}}</td>
+        <td>{{chocolate.chocolate_shape}}</td>
+
+
+        <td>
+          <a type="button" class="btn btn-outline-primary" href="/admin/chocolate/update/{{chocolate.chocolate_id}}">UPDATE</a>
+        </td>
+        <td>
+          <a type="button" class="btn btn-outline-danger" href="/admin/chocolate/delete/{{chocolate.chocolate_id}}">DELETE</a>
+        </td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+</div>
+{% endblock adminbodycontent %}

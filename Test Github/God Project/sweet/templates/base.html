@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/e26e4799e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="page">
+        <div class="nav-bar">
+            <div class="navbar navbar-expand-lg">
+                <div class="logo-x">
+                    <a class="navbar-brand logo" href="#"><img src="{% static 'image/logo.png' %}" alt=""
+                            class="img-fluid"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-x">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/variety">VARIETY</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="link">
+                    <div class="link-in">
+                        {% if user.is_authenticated %}
+                        <!-- <div class="searchbar">
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class=" mr-sm-2" type="search" placeholder="Search..." aria-label="Search"><a
+                                    href=""><i class="fas fa-search"></i></a>
+                            </form>
+                        </div> -->
+                        <a href="" class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Togglenavigation"><i class="fas fa-bars"></i></a>
+                        <a href="/logout">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        </a>
+                        {% else %}
+                        <a href="/signup" class="" role="button">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                        </a>
+                        <a href="/login" class="" role="button">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        </a>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row row-x">
+            <div class="col-lg-6 content">
+                <h4>
+                    My Chocolate, My Passion
+                </h4>
+                <br>
+                <h2>
+                    Decadence Chocolates
+                </h2>
+                <p>Decadence Chocolates is a premium chocolate manufacturer dedicated to creating exquisite, handcrafted
+                    chocolates. Founded in 2005 by master chocolatier Shruti Pawar, the company has grown from a small
+                    artisanal workshop into a celebrated brand known for its commitment to quality, sustainability, and
+                    innovation.</p>
+
+
+                <div class="social">
+                    <div class="social-link">
+
+                        <a href="https://www.facebook.com/DecadenceChocolatesWPG/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+                        <a href="https://www.instagram.com/decadence_chocolates/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+
+                        <a href="https://x.com/i/flow/login?redirect_after_login=%2Fchokolaindia" target="_blank"><i class="fab fa-twitter"></i></a>
+
+                        <a href="https://www.youtube.com/watch?v=E8DNAMxbzNw" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <img src="{% static 'image/chocolate ball.png' %}" alt="" class="ball1 ball">
+        <img src="{% static 'image/ball2.png' %}" alt="" class="ball2 ball">
+        <img src="{% static 'image/chocolate ball.png' %}" alt="" class="ball3 ball">
+        <img src="{% static 'image/chocolate ball.png' %}" alt="" class="ball4 ball">
+        <img src="{% static 'image/ball2.png' %}" alt="" class="ball5 ball">
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
